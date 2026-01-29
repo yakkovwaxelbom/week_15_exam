@@ -4,7 +4,7 @@ def execution(func):
     def wrapper(con):
         q = func()
 
-        cnx = con.cursor()
+        cnx = con.cursor(dictionary=True)
         cnx.execute(q)
         results = cnx.fetchall()
         cnx.close()
